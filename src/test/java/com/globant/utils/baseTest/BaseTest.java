@@ -8,7 +8,7 @@ import org.testng.annotations.Parameters;
 
 public class BaseTest {
     protected WebDriver driver;
-    String url = System.getenv("URL");
+    String url = System.getProperty("URL");
 
     @BeforeClass
     public void setUpBase() {
