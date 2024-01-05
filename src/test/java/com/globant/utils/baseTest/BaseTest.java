@@ -10,8 +10,9 @@ public class BaseTest {
     protected WebDriver driver;
 
     @BeforeClass
-    @Parameters({"url", "driver-path"})
-    public void setUpBase(String url, String driverPath) {
+    @Parameters({"url"})
+    public void setUpBase(String url) {
+        String driverPath = "src/utils/chromedriver.exe";
         System.setProperty("webdriver.chrome.driver", driverPath);
         driver = new ChromeDriver();
         driver.navigate().to(url);
