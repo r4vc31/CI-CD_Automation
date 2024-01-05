@@ -8,10 +8,10 @@ import org.testng.annotations.Parameters;
 
 public class BaseTest {
     protected WebDriver driver;
-    String url = System.getProperty("URL");
 
     @BeforeClass
-    public void setUpBase() {
+    @Parameters({"url"})
+    public void setUpBase(String url) {
         String driverPath = "src/utils/chromedriver.exe";
         System.setProperty("webdriver.chrome.driver", driverPath);
         driver = new ChromeDriver();
